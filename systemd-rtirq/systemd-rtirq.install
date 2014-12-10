@@ -1,0 +1,28 @@
+# arg 1:  the new package version
+post_install() {
+  cat << EOF
+
+==>   This script works in conjunction with the threadirqs kernel option.
+==>   To make use of it enable it with systemd:
+==>   	   systemctl enable rtirq
+==>   Configuration takes place in /etc/conf.d/rtirq
+
+EOF
+}
+
+# arg 1:  the new package version
+# arg 2:  the old package version
+post_upgrade() {
+  cat << EOF
+
+==>   This script works in conjunction with the threadirqs kernel option.
+==>   To make use of it enable it with systemd:
+==>   	   systemctl enable rtirq
+==>   Configuration takes place in /etc/conf.d/rtirq
+
+EOF
+}
+
+op=$1
+shift
+$op $*

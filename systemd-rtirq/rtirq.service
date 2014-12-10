@@ -1,0 +1,11 @@
+[Unit] 
+Description=Realtime IRQ thread system tuning 
+
+[Service] 
+Type=oneshot 
+ExecStart=/etc/rc.d/rtirq start
+ExecStop=/etc/rc.d/rtirq stop 
+RemainAfterExit=true 
+
+[Install] 
+WantedBy=multi-user.target
